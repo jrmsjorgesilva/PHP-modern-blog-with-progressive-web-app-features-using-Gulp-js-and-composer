@@ -1,8 +1,10 @@
 <section>
-    <article>
-            <header>
-                <h2><a href="#">TITULO DA POSTAGEM</a></h2>
-            </header>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo debitis incidunt itaque exercitationem culpa sed aspernatur, placeat magni vitae nihil qui vel harum. Sapiente pariatur laborum libero officiis, inventore dignissimos quasi totam dolore facilis porro non consequatur reprehenderit odit fuga unde minus laudantium sit voluptas ipsam aperiam. Consequuntur eligendi at reiciendis, commodi omnis nemo sequi optio voluptate dolorum repudiandae dolore qui laudantium nesciunt, illo voluptatum nostrum distinctio possimus quia aut voluptatibus nihil. Incidunt, sunt. Accusantium nulla nesciunt eveniet sit autem modi, dignissimos voluptatum quibusdam, corporis asperiores vitae quidem eligendi culpa, esse mollitia laboriosam cum quis error praesentium repudiandae ad! Commodi, blanditiis corrupti quasi aperiam debitis ipsum, molestias iure eius libero labore deleniti dolore pariatur sed porro beatae laborum, sit repellendus. Necessitatibus iste tempora consectetur, ratione dolore animi asperiores minima quod fugit pariatur, doloribus sint optio, sit maiores officia voluptatum voluptas ex in autem vitae ut velit deserunt qui. Fugiat ex repudiandae ea sapiente debitis neque molestias error delectus doloremque! Maiores exercitationem incidunt rem voluptas assumenda ad error, ipsum accusamus! Aspernatur dignissimos facere molestias in sit? Atque iusto voluptate dignissimos qui minus nihil doloremque consectetur deleniti cumque sapiente! Doloremque natus qui ullam, eius voluptatibus temporibus laborum esse sint consequuntur rerum necessitatibus!</p>
-    </article>
+    {% for post in posts %}
+        <article>
+                <header>
+                    <h2><a href="#">{{post.titulo}}</a></h2>
+                </header>
+                <p>{{post.conteudo}}</p>
+        </article>
+    {% endfor %}
 </section>

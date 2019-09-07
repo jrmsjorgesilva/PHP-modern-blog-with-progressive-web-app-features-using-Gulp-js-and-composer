@@ -6,6 +6,7 @@
     require_once('../controllers/ErrorController.php');
     require_once('../models/Postagem.php');
     require_once('../../lib/database/Connection.php');
+    require_once('../../vendor/autoload.php');
 
     $template = file_get_contents('../template/index.html');
     

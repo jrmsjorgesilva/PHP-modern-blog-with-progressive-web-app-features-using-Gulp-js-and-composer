@@ -7,12 +7,14 @@
     {
         public function start($urlGet)
         {
+            
+            $action = 'index';
+
             if (isset($urlGet['pagina'])) {
                 $controller = ucfirst($urlGet['pagina'].'Controller');
             } else {
                 $controller = 'HomeController';
             }
-            $action = 'index';
             
             if (!class_exists($controller)) {
                 $controller = 'ErrorController';
