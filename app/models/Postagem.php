@@ -22,6 +22,24 @@
 
             return $result;
         }
+
+        public static function selectPostById($idPost)
+        {
+            $connect = Connection::getConn();
+
+            $sql = "SELECT * FROM postagem WHERE id = :id";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(':id', $idPost, PDO::PARAM_INT);
+            $sql->execute();
+
+            $result = $sql->fetchObject('Postagem');
+
+            if (!$result) {
+                throw new Exception('não foi encontrado nenhum registro no banco');
+            }
+
+            return $result;
+        }
     }
 
 ?>
