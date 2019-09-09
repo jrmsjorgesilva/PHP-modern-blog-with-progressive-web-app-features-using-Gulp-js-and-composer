@@ -4,5 +4,19 @@
                     <h2>{{titulo}}</h2>
                 </header>
                 <p>{{conteudo}}</p>
+                <hr/>
+                <div class='comentarios'>
+                    {% if comentarios == false %}
+                        <p>Nenhum comentario encontrado para esta postagem</p>
+                    
+                    {% else %}
+
+                        {% for comentario in comentarios %}
+                            <h3>{{comentario.nome}}</h3>
+                            <p>{{comentario.mensagem}}</p>
+                        {% endfor %}
+
+                    {% endif %}
+                </div>
         </article>
 </section>

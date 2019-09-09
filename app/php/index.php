@@ -2,10 +2,15 @@
 
     //IMPORTS
     require_once('../helpers/Core/Core.php');
+    
     require_once('../controllers/HomeController.php');
     require_once('../controllers/ErrorController.php');
     require_once('../controllers/PostController.php');
+    require_once('../controllers/AboutController.php');
+
     require_once('../models/Postagem.php');
+    require_once('../models/Comentario.php');
+    
     require_once('../../lib/database/Connection.php');
     require_once('../../vendor/autoload.php');
 

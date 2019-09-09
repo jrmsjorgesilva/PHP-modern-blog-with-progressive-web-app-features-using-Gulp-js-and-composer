@@ -36,6 +36,8 @@
 
             if (!$result) {
                 throw new Exception('não foi encontrado nenhum registro no banco');
+            } else {
+                $result->comentarios = Comentario::selectCommentary($result->id);
             }
 
             return $result;
