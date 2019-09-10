@@ -42,6 +42,31 @@
 
             return $result;
         }
+
+        public static function insert($data)
+        {
+            if (empty($data['titulo']) || empty($data['conteudo'])) {
+                throw new Exception("Preencha todos os campos!");
+
+                return false;
+            }
+
+            $connect = Connection::getConn();
+
+            $sql = $connect->prepare("INSERT INTO postagem (titulo, conteudo) VALUES (:tit, :cont)");
+            // SUBSTITUINDO VALORES ':VALOR' NO BANCO
+            $sql->bindValue(':tit', $data['titulo']);
+            $sql->bindValue(':cont', $data['conteudo']);
+            $result = $sql->execute();
+
+            if ($result == 0) {
+                throw new Exception("Erro na publicação");
+
+                return false;
+            }
+
+            return true;
+        }
     }
 
 ?>

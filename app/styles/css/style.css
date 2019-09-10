@@ -28,6 +28,11 @@ body {
     transition: all .4s ease 0s;
 }
 
+.admin {
+    float: right;
+    /* font-weight: bold; */
+}
+
 #topo a:hover,
 #topo a:focus {
     opacity: .7;

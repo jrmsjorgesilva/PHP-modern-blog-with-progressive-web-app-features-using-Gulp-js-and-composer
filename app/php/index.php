@@ -7,6 +7,7 @@
     require_once('../controllers/ErrorController.php');
     require_once('../controllers/PostController.php');
     require_once('../controllers/AboutController.php');
+    require_once('../controllers/AdminController.php');
 
     require_once('../models/Postagem.php');
     require_once('../models/Comentario.php');

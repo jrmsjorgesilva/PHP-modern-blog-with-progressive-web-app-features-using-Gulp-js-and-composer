@@ -7,8 +7,12 @@
     {
         public function start($urlGet)
         {
+            if (isset($urlGet['metodo'])) {
+                $action = $urlGet['metodo'];
+            } else {
+                $action = 'index';    
+            }
             
-            $action = 'index';
 
             if (isset($urlGet['pagina'])) {
                 $controller = ucfirst($urlGet['pagina'].'Controller');
