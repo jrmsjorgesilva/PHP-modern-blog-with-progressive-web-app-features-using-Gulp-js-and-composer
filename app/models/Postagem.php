@@ -43,9 +43,9 @@
             return $result;
         }
 
-        public static function insert($data)
+        public static function insert($params)
         {
-            if (empty($data['titulo']) || empty($data['conteudo'])) {
+            if (empty($params['titulo']) || empty($params['conteudo'])) {
                 throw new Exception("Preencha todos os campos!");
 
                 return false;
@@ -55,12 +55,51 @@
 
             $sql = $connect->prepare("INSERT INTO postagem (titulo, conteudo) VALUES (:tit, :cont)");
             // SUBSTITUINDO VALORES ':VALOR' NO BANCO
-            $sql->bindValue(':tit', $data['titulo']);
-            $sql->bindValue(':cont', $data['conteudo']);
+            $sql->bindValue(':tit', $params['titulo']);
+            $sql->bindValue(':cont', $params['conteudo']);
             $result = $sql->execute();
 
             if ($result == 0) {
                 throw new Exception("Erro na publicação");
+
+                return false;
+            }
+
+            return true;
+        }
+
+        public static function update($params)
+        {
+            $connect = Connection::getConn();
+
+            $sql = "UPDATE postagem SET titulo = :tit, conteudo = :cont WHERE id = :id";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(':tit', $params['titulo']);
+            $sql->bindValue(':cont', $params['conteudo']);
+            $sql->bindValue(':id', $params['id']);
+            $result = $sql->execute();
+
+            if ($result == 0) {
+                throw new Exception("Falha na alteração");
+
+                return false;
+            }
+
+            return true;
+
+        }
+
+        public static function delete($paramID)
+        {
+            $connect = Connection::getConn();
+
+            $sql = "DELETE FROM postagem WHERE id = :id";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(':id', $paramID);
+            $result = $sql->execute();
+
+            if ($result == 0) {
+                throw new Exception("Falha na deleção");
 
                 return false;
             }
