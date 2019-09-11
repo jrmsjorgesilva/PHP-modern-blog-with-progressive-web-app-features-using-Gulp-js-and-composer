@@ -1,25 +1,87 @@
 <h1>Alterar Publicação</h1>
 
-<form method="post" action="?pagina=admin&metodo=update">
-    <input 
+<form method="post" action="?pagina=admin&metodo=update" class="formulario">
+    <input
+        class="input-formulario" 
         type="text" 
         name="titulo"
         placeholder="titulo da publicação"
         value="{{titulo}}"
     >
 
-    <textarea 
-        type="text" 
-        name="conteudo" 
+    <br/>
+
+    <textarea
+        class="textarea-formulario"
+        name="conteudo"
         placeholder="digite o novo texto aqui..."
-        cols="55"
-        rows="15"    
+        cols="75"
+        rows="75"  
     >
     {{conteudo}}
     </textarea>
 
+    <br/>
+
     <input type="hidden" name="id" value="{{id}}"> 
 
-    <input type="submit" value="Alterar">
+    <br/>
+
+    <input class="submit-formulario" type="submit" value="Alterar">
     
 </form>
+
+<!-- STYLING -->
+
+<style scoped>
+
+    h1 {
+        text-align: center;
+        font-weight: bold;
+        padding: .4rem;
+        margin: 0 2.2rem;
+        text-shadow: #6495ed rgba(0, 0, 0, #64c2c5);
+        color: #6495ed;
+    }
+
+    .container {
+        padding: 1.1rem;
+    }
+
+    .formulario {
+        background: transparent;
+        padding: 1.2rem;
+    }
+
+    .input-formulario {
+        color: #6495ed;
+        padding: 1.2rem;
+        margin: .7rem;
+        border-radius: 0.6rem;
+    }
+
+    .textarea-formulario {
+        color: #6495ed;
+        padding: 1.2rem;
+        border-radius: 0.6rem;
+        margin: .7rem;
+    }
+
+    .submit-formulario {
+        color: #6495ed;
+        padding: 2.2rem;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        margin: .7rem;
+        background: transparent;
+        border-color: #6495ed;
+        border-radius: 0.6rem;
+        cursor: pointer;
+        transition: all .5s ease 0s;
+    }
+
+    .submit-formulario:focus,
+    .submit-formulario:hover {
+        opacity: .7;
+    }
+</style>

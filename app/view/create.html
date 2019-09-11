@@ -1,21 +1,91 @@
 <h1>Criar Publicação</h1>
 
-<form method="post" action="?pagina=admin&metodo=insert">
-    <input 
-        type="text" 
-        name="titulo"
-        placeholder="titulo da publicação"
+<section container>
+    <form class="formulario" method="post" action="?pagina=admin&metodo=insert">
+        <input 
+            class="input-formulario"
+            type="text" 
+            name="titulo"
+            placeholder="titulo da publicação"
 
-    >
+        >
 
-    <textarea 
-        name="conteudo" 
-        placeholder="digite seu texto aqui..."
-        cols="55"
-        rows="15"    
-    >
-    </textarea>
+        <br/>
 
-    <input type="submit" value="cadastrar">
-    
-</form>
+        <textarea
+            class="textarea-formulario" 
+            name="conteudo"
+            text=""
+            placeholder="digite seu texto aqui..."
+            cols="100"
+            rows="45"    
+        >
+        </textarea>
+
+        <br/>
+
+        <input
+            class="submit-formulario" 
+            type="submit" 
+            value="cadastrar"
+        >
+        
+    </form>
+</section>
+
+<!-- STYLING -->
+
+<style scoped>
+
+    h1 {
+        text-align: center;
+        font-weight: bold;
+        padding: .4rem;
+        margin: 0 2.2rem;
+        text-shadow: #6495ed rgba(0, 0, 0, #64c2c5);
+        color: #6495ed;
+    }
+
+    .container {
+        padding: 1.1rem;
+    }
+
+    .formulario {
+        background: transparent;
+        padding: 1.2rem;
+    }
+
+    .input-formulario {
+        color: #6495ed;
+        padding: 1.2rem;
+        margin: .7rem;
+        border-radius: 0.6rem;
+        width: 53.4rem;
+    }
+
+    .textarea-formulario {
+        color: #6495ed;
+        padding: 1.2rem;
+        border-radius: 0.6rem;
+        margin: .7rem;
+    }
+
+    .submit-formulario {
+        color: #6495ed;
+        padding: 2.2rem;
+        font-size: 1.3em;
+        
+        text-transform: uppercase;
+        background: transparent;
+        border-color: #6495ed;
+        border-radius: 0.6rem;
+        cursor: pointer;
+        transition: all .5s ease 0s;
+    }
+
+    .submit-formulario:focus,
+    .submit-formulario:hover {
+        opacity: .7;
+    }
+
+</style>

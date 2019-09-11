@@ -22,7 +22,7 @@ body {
 }
 
 #topo a {
-    color: #333;
+    color: #6495ed;
     text-decoration: none;
     font-size: 20px;
     transition: all .4s ease 0s;
@@ -30,7 +30,15 @@ body {
 
 .admin {
     float: right;
-    /* font-weight: bold; */
+    font-weight: bold;
+    font-size: .5rem;
+    color: wheat;
+}
+
+.admin-span {
+    padding: .7rem;
+    background: #6495ed;
+    border-radius: 1.2rem;
 }
 
 #topo a:hover,
@@ -67,5 +75,5 @@ body {
 
 #conteudo article a:hover {
     letter-spacing: 1px;
-    border-right: 600px solid #6495ed
+    border-right: 100px solid #6495ed;
 }

@@ -1,22 +1,95 @@
-<h1>Gerenciador de Conteudos</h1>
+<section class="container">
+    <h1>Gerenciador de Conteudos</h1>
 
-<a href="http://localhost/site%20PHP/app/php/?pagina=admin&metodo=create">Criar Publicação</a>
+    <a class="link" href="http://localhost/site%20PHP/app/php/?pagina=admin&metodo=create">Criar Publicação</a>
 
-<table border='2'>
-    <tr>
-        <th>ID</th>
-        <th>Titulo</th>
-        <th>Alteração</th>
-        <th>Deleção</th>
-    </tr>
-
-    {% for postagem in postagens %}
+    <table class="tabela" border="1">
         <tr>
-            <th>{{postagem.id}}</th>
-            <th>{{postagem.titulo}}</th>
-            <th><a href="http://localhost/site%20PHP/app/php/?pagina=admin&metodo=change&id={{postagem.id}}">Alterar</a></th>
-            <th><a href="http://localhost/site%20PHP/app/php/?pagina=admin&metodo=delete&id={{postagem.id}}">Deleção</a></th>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Alteração</th>
+            <th>Deleção</th>
         </tr>
-    {% endfor %}
 
-</table>
+        {% for postagem in postagens %}
+            <tr>
+                <th>{{postagem.id}}</th>
+                <th>{{postagem.titulo}}</th>
+                <th>
+                    <a 
+                        class="simple-link" 
+                        href="http://localhost/site%20PHP/app/php/?pagina=admin&metodo=change&id={{postagem.id}}"
+                    >Alterar</a>
+                </th>
+                <th><a 
+                        class="simple-link" 
+                        href="http://localhost/site%20PHP/app/php/?pagina=admin&metodo=delete&id={{postagem.id}}"
+                    >Deleção</a>
+                </th>
+            </tr>
+        {% endfor %}
+
+    </table>
+</section>
+
+<!-- STYLING -->
+
+<style>
+
+h1 {
+    color: #6495ed;
+    margin: 2.7rem;
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-shadow: #64f;
+}
+
+.container {
+    text-align: center;
+}
+
+.simple-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #6495ed;
+    text-transform: uppercase;
+}
+
+.simple-link:focus,
+.simple-link:hover {
+    opacity: .7;
+}
+
+.link {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #6495ed;
+    text-transform: uppercase;
+    transition: all .3s ease 0s;
+    margin-bottom: 3.4em;
+}
+
+.link:hover,
+.link:focus {
+    letter-spacing: .2rem;
+    background: #6495ed;
+    color: whitesmoke;
+    padding: 1rem;
+    border-radius: .4rem;
+    text-decoration: none;
+}
+
+.tabela {
+    padding: 1.2rem;
+    margin: 2.7rem auto;
+    border-color: #6495ed;
+    border-width: .05em;
+    border-radius: .5rem;
+}
+
+.tabela tr th {
+    padding: 1.2rem;
+}
+
+
+</style>
