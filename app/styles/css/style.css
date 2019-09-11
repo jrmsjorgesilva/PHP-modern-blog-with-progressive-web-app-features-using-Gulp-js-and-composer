@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,26 +13,29 @@ body {
 #corpo {
     margin: 0 auto;
     width: 1000px;
-    background-color: #fff;
+    background-color: #fffbfa;
     border-left: 2px solid #ccc;
     border-right: 2px solid #ccc;
 }
 
 #topo {
-    padding: 20px 25px;
-    border-bottom: 2px solid #ccc;
+    padding: 35px 25px;
+    border-bottom: 2px solid #e47e3a;
+    height: 20vh;
 }
 
 #topo a {
     color: #6495ed;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 2.4rem;
     transition: all .4s ease 0s;
+    margin-left: .6rem;
 }
 
 #topo a:hover,
 #topo a:focus {
     opacity: .7;
+    color: #e47e3a;
 }
 
 .admin {
@@ -41,7 +46,7 @@ body {
 }
 
 .admin-span {
-    padding: .7rem;
+    padding: .8rem;
     background: #6495ed;
     border-radius: 1.2rem;
     color: white;
@@ -53,7 +58,7 @@ body {
 }
 
 #conteudo article {
-    margin-bottom: 20px;
+    margin-bottom: 1.2rem;
 }
 
 #conteudo article h2 {
@@ -63,7 +68,7 @@ body {
     color: #333;
 }
 
-#conteudo header h2 {
+#conteudo .title-single {
     font-size: 3.1rem;
     text-align: center;
     color: #e47e3a;
@@ -74,6 +79,22 @@ body {
     font-size: 1.1rem;
     line-height: 1.9rem;
     letter-spacing: .10rem;
+}
+
+#conteudo article p::before {
+    content: open-quote;
+    padding: 1.4rem;
+    font-size: 3.8rem;
+    font-weight: bold;
+    color: #e47e3a;
+}
+
+#conteudo article p::after {
+    content: close-quote;
+    padding: 1.4rem;
+    font-size: 3.8rem;
+    font-weight: bold;
+    color: #e47e3a;
 }
 
 #conteudo article p {
@@ -94,6 +115,6 @@ body {
 #conteudo article a:hover {
     font-size: 40px;
     letter-spacing: 1px;
-    border-right: 250px solid #e47e3a;
+    border-right: 150px solid #e47e3a;
     border-radius: 50px;
 }

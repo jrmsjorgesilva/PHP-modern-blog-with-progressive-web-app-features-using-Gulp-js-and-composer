@@ -16,8 +16,8 @@
                 $params['posts'] = $postCollection;
 
                 $values = $template->render($params);
-                echo $values;
                 // var_dump($values);
+                echo $values;
 
             } catch(Exception $e) {
                 echo $e->getMessage();
