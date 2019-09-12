@@ -5,6 +5,41 @@
                 </header>
                 <p class="texto-conteudo">{{conteudo}}</p>
                 <hr/>
+
+                <span class="convite-comentario">DIGA O QUE ESTÁ PENSANDO...</span>
+
+                <form 
+                    method="post" 
+                    action="?pagina=post&metodo=addComment">
+                    <input 
+                        class="input-form" 
+                        type="text" 
+                        name="nome" 
+                        placeholder="Nome"
+                    >
+                    <textarea 
+                        class="text-form" 
+                        name="msg" 
+                        id="msg-comentario" 
+                        cols="30" 
+                        rows="3" 
+                        placeholder="Diga o que pensa..."
+                    >
+                    </textarea>
+                    <input 
+                        type="hidden" 
+                        name="id" 
+                        value={{id}}
+                    >
+                    <input 
+                        class="submit-form" 
+                        type="submit" 
+                        value="Enviar"
+                    >
+                </form>
+
+                <hr>
+
                 <div class='comentarios'>
                     {% if comentarios == false %}
                         <p>Nenhum comentario encontrado para esta postagem</p>
@@ -20,3 +55,60 @@
                 </div>
         </article>
 </section>
+
+<!-- STYLING -->
+
+<style>
+
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 16rem;
+        margin-left: 3.4rem;
+    }
+
+    .input-form {
+        margin-top: 1.4rem;
+        margin-bottom: .4rem;
+        padding: .4rem;
+    }
+
+    .text-form {
+        margin-bottom: .4rem;
+        padding: .4rem;
+    }
+
+    .submit-form {
+       display: block;
+       padding: .7rem;
+       border-radius: .4rem;
+       background: transparent;
+       border: .13rem solid #6495ed;
+       cursor: pointer;
+       color: #6495ed;
+       text-transform: uppercase;
+
+    }
+
+    hr {
+        margin: 2.3rem;
+    }
+
+    h3 {
+        font-size: 1.7rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 1.2rem;
+        margin-left: 3.4rem;
+        color: #e47e3a;
+    }
+
+    .convite-comentario {
+        color: #e47e3a;
+        font-size: 1.8rem;
+        padding: 3.6rem;
+        font-weight: bold;
+        letter-spacing: .4rem;
+    }
+
+</style>
