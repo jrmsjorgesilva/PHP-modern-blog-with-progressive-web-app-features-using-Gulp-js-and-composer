@@ -11,19 +11,46 @@
 
     <div id='corpo'>
         <div id='topo'>
-            <nav>
-                <a href="http://localhost/site%20PHP/app/php/">Blog</a>
-                <a href="">Lorem</a>
-                <a href="">Merol</a>
-                <a href="http://localhost/site%20PHP/app/php/?pagina=about">Sobre</a>
-                <a 
-                    href="http://localhost/site%20PHP/app/php/?pagina=admin&metodo=index" 
-                    class='admin'>
-                    <span class="admin-span">
-                        Login
-                    </span>
-                </a>
+            <nav class="navbar">
+                <span class="open-slide">
+                    <a class="nav-links" href="#" onclick="openSlideMenu()">
+                        <svg width="30" height="30">
+                            <path d="M0,5 30,5" stroke="#e47e3a" stroke-width="5"/>
+                            <path d="M0,14 30,14" stroke="#e47e3a" stroke-width="5"/>
+                            <path d="M0,23 30,23" stroke="#e47e3a" stroke-width="5"/>
+                        </svg>
+                    </a>
+                </span>
+
+                <span class="navbar-nav">
+                    <a href="http://localhost/site%20PHP/app/php/">Blog</a>
+                    <a href="">Lorem</a>
+                    <a href="">Merol</a>
+                    <a href="http://localhost/site%20PHP/app/php/?pagina=about">Sobre</a>
+                    <a 
+                        href="http://localhost/site%20PHP/app/php/?pagina=admin&metodo=index" 
+                        class='admin'>
+                        <span class="admin-span">
+                            Login
+                        </span>
+                    </a>
+                </span>
             </nav>
+
+            <div id="side-menu" class="side-nav">
+                <a class="btn-close" href="#" onclick="closeSlideMenu()">&times;</a>
+                <a class="nav-links" href="http://localhost/site%20PHP/app/php/">Blog</a>
+                <a class="nav-links" href="">Lorem</a>
+                <a class="nav-links" href="">Merol</a>
+                <a class="nav-links" href="http://localhost/site%20PHP/app/php/?pagina=about">Sobre</a>
+                <a  
+                    class="nav-links"
+                    href="http://localhost/site%20PHP/app/php/?pagina=admin&metodo=index" 
+                    class='admin'
+                >Login
+                </a>
+            </div>
+
         </div>
         <div id='conteudo'>
             {{area_dinamica}}
@@ -31,5 +58,62 @@
     </div>
     
 </body>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    // SLIDE MENU RESPONSIVE DINAMICS
+
+    const openSlideMenu = () => {
+        document.getElementById('side-menu').style.width = '300px';
+    }
+
+    const closeSlideMenu = () => {
+        document.getElementById('side-menu').style.width = '0px';
+    }
+
+</script>
+
+<!-- STYLING -->
+
+<style>
+
+    .side-nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #ffffcc;
+        opacity: .8;
+        overflow-x: hidden;
+        padding-top: 160px;
+        transition: .6s; 
+    }
+
+    .side-nav a {
+        padding: 10px 10px 10px 30px;
+        text-decoration: none;
+        font-size: 22px;
+        /* color: #ffffcc; */
+        display: block;
+        transition: .6s;
+    }
+
+    .side-nav:hover {
+        color: #e47e3a;
+    }
+
+    .side-nav .btn-close {
+        position: absolute;
+        top: 0;
+        right: 22px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+</style>
 
 </html>
