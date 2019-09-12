@@ -33,9 +33,10 @@
 
             if ($sql->rowCount()) {
                 return true;
+            } else {
+                throw new Exception("falha na inserção");
             }
 
-            throw new Exception("falha na inserção");
 
         }
     }

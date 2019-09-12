@@ -7,7 +7,10 @@
 }
 
 body {
-    background: #6495ed;
+    background: url('../../../lib/img/back.jpeg');
+    background-color: #6495ed;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #corpo {
@@ -92,6 +95,7 @@ body {
 #conteudo article p::after {
     content: close-quote;
     padding: 1.4rem;
+    position: absolute;
     font-size: 3.8rem;
     font-weight: bold;
     color: #e47e3a;

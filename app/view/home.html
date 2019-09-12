@@ -1,4 +1,4 @@
-<section>
+<section class='container'>
     {% for post in posts %}
         <article>
                 <header>
@@ -7,5 +7,14 @@
                 </header>
                 <p>{{post.conteudo}}</p>
         </article>
+        <br>
     {% endfor %}
 </section>
+
+<style>
+
+    .container {
+        margin-top: 2.5rem;
+    }
+
+</style>

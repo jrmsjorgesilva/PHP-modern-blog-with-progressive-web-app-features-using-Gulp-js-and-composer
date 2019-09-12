@@ -4,7 +4,15 @@
     {
         public function index()
         {
-            echo '404, pagina inexistente :/';
+            
+            $loader = new \Twig\Loader\FilesystemLoader('../view');
+            $twig = new \Twig\Environment($loader);
+            $template = $twig->load('error.html');
+
+            $params = array();
+            
+            $values = $template->render($params);
+            echo $values;
         }
     }
 
